@@ -1,0 +1,9 @@
+.setBg-contact{
+    background-image: url('../../../public/conatcbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.bg-colors{
+    background-color: rgba(51, 48, 48, 0.863);
+}

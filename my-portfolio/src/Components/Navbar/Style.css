@@ -1,0 +1,8 @@
+.active{
+    background: transparent !important;
+    border-bottom : 2px solid #fff !important;
+    border-radius: 0px !important;
+}
+.my-bg-color{
+    background-color: #3b3939e3;
+}

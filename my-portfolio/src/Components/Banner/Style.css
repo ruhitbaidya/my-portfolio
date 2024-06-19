@@ -1,0 +1,10 @@
+.headerImage{
+    background-image: url('../../../public//headerbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
+}
+.bg-colors-header{
+    background-color: rgba(65, 62, 62, 0.836);
+}
