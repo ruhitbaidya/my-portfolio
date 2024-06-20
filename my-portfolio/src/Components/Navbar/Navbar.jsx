@@ -21,7 +21,6 @@ const Navbar = () => {
       }else{
         SetNavClass(false)
       }
-      console.log(window.scrollY)
     }
     window.addEventListener('scroll', handelScrool)
     return ()=>{

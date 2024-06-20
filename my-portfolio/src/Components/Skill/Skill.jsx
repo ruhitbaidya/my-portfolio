@@ -8,6 +8,8 @@ import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { SiFirebase } from "react-icons/si";
+import { FaGithub } from "react-icons/fa6";
+import { SiJsonwebtokens } from "react-icons/si";
 const Skill = () => {
   return (
     <div className="">
@@ -57,6 +59,14 @@ const Skill = () => {
                         <div className="border hover:border-green-400 text-center p-[20px]">
                             <p className="text-3xl flex justify-center"><SiFirebase /></p>
                             <p>Firebase</p>
+                        </div>
+                        <div className="border hover:border-green-400 text-center p-[20px]">
+                            <p className="text-3xl flex justify-center"><FaGithub /></p>
+                            <p>Github</p>
+                        </div>
+                        <div className="border hover:border-green-400 text-center p-[20px]">
+                            <p className="text-3xl flex justify-center"><SiJsonwebtokens /></p>
+                            <p>JSON Web Token</p>
                         </div>
                     </div>
                 </div>
