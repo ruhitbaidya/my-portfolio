@@ -1,26 +1,44 @@
 import { IoMenu } from "react-icons/io5";
 import { SiXdadevelopers } from "react-icons/si";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Style.css"
 import { useEffect, useState } from "react";
+const navObject = [
+  {
+    text : "Home",
+    tag : "#home"
+  },
+  {
+    text : "About",
+    tag : "#about"
+  },
+  {
+    text : "Skill",
+    tag : "#skill"
+  },
+  {
+    text : "Projects",
+    tag : "#projects"
+  },
+  {
+    text : "Contact",
+    tag : "#contact"
+  }
+]
 const Navbar = () => {
+  const texts =  useLocation();
+      console.log(texts.hash)
   const [navClass, SetNavClass] = useState(false)
-    const links = <>
-        <li> <NavLink to="/">Home</NavLink> </li>
-        <li> <NavLink to="/about">About</NavLink> </li>
-        <li> <NavLink to="/skill">Skill</NavLink> </li>
-        <li> <NavLink to="/services">Services</NavLink> </li>
-        <li> <NavLink to="/blog">Blog</NavLink> </li>
-        <li> <NavLink to="/Contact">Contact</NavLink> </li>
-    </>
+    const links = navObject.map((item)=> <li><a className={item.tag === texts.hash ? 'active': ''} href={item.tag}>{item.text}</a></li>)
   
   useEffect(()=>{
-    const handelScrool = ()=>{
+    const handelScrool =  ()=>{
       if(window.scrollY > 500){
         SetNavClass(true)
       }else{
         SetNavClass(false)
-      }
+      }  
+      console.log(window.history)
     }
     window.addEventListener('scroll', handelScrool)
     return ()=>{

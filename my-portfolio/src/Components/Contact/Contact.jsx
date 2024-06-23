@@ -31,7 +31,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="setBg-contact">
+    <div id='contact' className="setBg-contact">
       <div className="bg-colors py-[100px]">
         <div className="container mx-auto px-[20px] text-white">
           <div>

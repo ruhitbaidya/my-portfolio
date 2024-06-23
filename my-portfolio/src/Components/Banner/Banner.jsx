@@ -3,12 +3,12 @@ import './Style.css'
 import Navbar from "../Navbar/Navbar";
 const Banner = () => {
   return (
-    <div className="headerImage">
-      <div className="bg-colors-header">
+    <div id="home" className="headerImage border-2 border-gray-800">
+      <div className="bg-colors-header h-screen">
       <Navbar />
-      <div className="py-[200px]">
-        <div className="container mx-auto px-[20px]">
-          <div className="">
+      <div className="h-full">
+        <div className="container mx-auto px-[20px] h-full">
+          <div className="flex justify-center items-center h-[89%]">
             <div className="text-center">
                 <p className="text-center text-white text-[19px] w-[60%] mx-auto">{`Hi I'm Ruhit Baidya i am a MERN Stack Developer  Front-end Specialist Crafting dynamic and responsive web applications with MongoDB, Express.js, React, and Node.js.`}</p>
               <h2 className="text-4xl font-[600] text-white mt-[30px]">

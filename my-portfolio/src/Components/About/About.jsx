@@ -1,8 +1,8 @@
 import "./Style.css";
 const About = () => {
   return (
-    <div className="">
-      <div className="py-[50px]">
+    <div id="about" className="">
+      <div className="py-[100px]">
         <div className="container mx-auto px-[20px]">
           <h3 className="text-center  text-3xl font-[700]">About Me</h3>
           <hr className="border border-gray-600 w-[15%] mx-auto mt-[15px]" />
