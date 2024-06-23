@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
-import { FaTwitterSquare } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./Style.css";
@@ -66,23 +65,18 @@ const Contact = () => {
                     </div>
                     <div className="flex justify-center items-center gap-[20px] text-[35px] mt-[30px]">
                       <span>
-                        <Link>
+                        <Link to="https://www.linkedin.com/in/ruhitbaidya" target="_blank">
                           <FaLinkedin />{" "}
                         </Link>
                       </span>
                       <span>
-                        <Link>
+                        <Link to="https://www.facebook.com/ruhitbaidya01" target="_blank">
                           <FaFacebookSquare />{" "}
                         </Link>
                       </span>
                       <span>
-                        <Link>
+                        <Link to='https://github.com/ruhitbaidya' target="_blank">
                           <FaGithubSquare />{" "}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link>
-                          <FaTwitterSquare />{" "}
                         </Link>
                       </span>
                     </div>

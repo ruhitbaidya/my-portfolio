@@ -51,9 +51,9 @@ const Projects = () => {
 
                     <div className="mt-[20px]">
                       <p className="font-bold space-x-4">
-                        <Link className="border border-gray-600 p-[10px]">Client Side</Link>
-                        <Link className="border border-gray-600 p-[10px]">Server Side</Link>
-                        <Link className="border border-gray-600 p-[10px]">Live Link</Link>
+                        <Link to="https://github.com/ruhitbaidya/GlassAndCraft-client" target="_blank" className="border border-gray-600 p-[10px]">Client Side</Link>
+                        <Link  to="https://github.com/ruhitbaidya/glassandCraft-server" target="_blank" className="border border-gray-600 p-[10px]">Server Side</Link>
+                        <Link to='https://paper-crafts-glass-art.web.app/' target="_blank" className="border border-gray-600 p-[10px]">Live Link</Link>
                       </p>
                     </div>
                   </div>
@@ -92,10 +92,10 @@ access others data.
                     </p>
 
                     <div className="mt-[20px]">
-                      <p className="font-bold space-x-4">
-                        <Link className="border border-gray-600 p-[10px]">Client Side</Link>
-                        <Link className="border border-gray-600 p-[10px]">Server Side</Link>
-                        <Link className="border border-gray-600 p-[10px]">Live Link</Link>
+                    <p className="font-bold space-x-4">
+                        <Link to="https://github.com/ruhitbaidya/student-tutors-client" target="_blank" className="border border-gray-600 p-[10px]">Client Side</Link>
+                        <Link  to="https://github.com/ruhitbaidya/student-tutors-server" target="_blank" className="border border-gray-600 p-[10px]">Server Side</Link>
+                        <Link to='https://students-tutors.web.app/' target="_blank" className="border border-gray-600 p-[10px]">Live Link</Link>
                       </p>
                     </div>
                   </div>
