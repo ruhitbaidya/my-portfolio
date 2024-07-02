@@ -3,7 +3,7 @@ import './Style.css'
 
 const Login = () => {
   return (
-    <div className='regImage'>
+    <div className='regImagelogin'>
         <div className='bg-colos'>
             <div className='flex justify-center items-center h-full'> 
                <div className='w-[50%] mainbg-clor'>

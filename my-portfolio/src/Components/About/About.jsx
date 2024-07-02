@@ -1,4 +1,3 @@
-import ImageMe from '../../../public/ruhitbaidya (2).jpg'
 import "./Style.css";
 const About = () => {
   return (
@@ -64,7 +63,7 @@ const About = () => {
             </div>
             <div>
               <div className='w-[80%] mx-auto flex items-center justify-center'>
-              <img className='h-[500px] object-cover rounded-lg border-4 border-green-300' src={ImageMe} alt="" />
+              <img className='h-[500px] object-cover rounded-lg border-4 border-green-300' src='https://i.ibb.co/ncv73r1/ruhit.jpg' alt="" />
               </div>
             </div>
           </div>

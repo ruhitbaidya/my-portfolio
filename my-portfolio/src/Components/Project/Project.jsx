@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import image1 from "../../../public/screencapture-paper-crafts-glass-art-web-app-2024-06-21-00_10_35.png";
-import image2 from "../../../public/screencapture-students-tutors-web-app-2024-06-21-00_08_54.png";
 import "./Style.css";
 const Projects = () => {
   return (
@@ -15,7 +13,7 @@ const Projects = () => {
             <div>
               <div className="grid grid-cols-2 gap-[30px]">
                 <div className="hoverImage">
-                  <img src={image1} alt="" />
+                  <img src='https://i.ibb.co/cJV8Yws/glory.png' alt="" />
                 </div>
                 <div className="flex items-center">
                   <div className="space-y-4">
@@ -101,7 +99,7 @@ access others data.
                   </div>
                 </div>
                 <div className="hoverImage">
-                  <img src={image2} alt="" />
+                  <img src='https://i.ibb.co/Dgtdv9M/teachable.png' alt="" />
                 </div>
               </div>
             </div>

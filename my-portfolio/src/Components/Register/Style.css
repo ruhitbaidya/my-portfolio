@@ -1,5 +1,5 @@
 .regImage{
-    background-image: url('../../../public/resgister.jpg');
+    background-image: url('../../assets/resgister.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

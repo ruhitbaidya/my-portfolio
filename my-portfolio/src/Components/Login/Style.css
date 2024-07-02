@@ -1,0 +1,18 @@
+.regImagelogin{
+    background-image: url('../../assets/loginpages.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+.bg-colos{
+    background-color: rgba(221, 224, 224, 0.308);
+    height: 100vh;
+}
+
+.mainbg-clor{
+    background-color: rgba(225, 233, 240, 0.596);
+    padding:30px;
+    border: 2px solid blueviolet;
+    border-radius: 10px;
+}
