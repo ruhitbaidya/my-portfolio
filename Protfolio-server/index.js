@@ -1,5 +1,4 @@
-// df45ad4a5d8adf5ad#@&DSW&@$@
-//86NGRLWX6FYPCU3HFLJ1VJYH
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
