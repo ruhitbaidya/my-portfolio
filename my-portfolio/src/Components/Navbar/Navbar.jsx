@@ -50,7 +50,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handelScrool = () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 700) {
         SetNavClass(true);
       } else {
         SetNavClass(false);
