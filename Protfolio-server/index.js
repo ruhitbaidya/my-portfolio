@@ -4,8 +4,16 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 const nodemailer = require("nodemailer");
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://ruhitbaidya.vercel.app",
+    ]
+  })
+);
 app.use(express.json());
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
