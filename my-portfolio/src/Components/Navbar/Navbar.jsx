@@ -64,7 +64,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`w-full  ${
+      className={`w-full z-10  ${
         navClass ? "my-bg-color fixed top-0 right-0 left-0" : "bg-transparent"
       }`}
     >
