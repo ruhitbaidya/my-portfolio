@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -6,10 +5,9 @@ require("dotenv").config();
 const nodemailer = require("nodemailer");
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://ruhitbaidya.vercel.app",
-    ]
+    origin: ["http://localhost:5173", "https://ruhitbaidya.vercel.app"],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
   })
 );
 app.use(express.json());
