@@ -2,10 +2,9 @@ import { IoMenu } from "react-icons/io5";
 import { SiXdadevelopers } from "react-icons/si";
 import { useLocation } from "react-router-dom";
 import { Link as PageLink } from "react-scroll";
-import { Link } from "react-router-dom";
 import "./Style.css";
-import { useContext, useEffect, useState } from "react";
-import { ContextProvide } from "../../UserAuth/UserAuth";
+import { useEffect, useState } from "react";
+
 const navObject = [
   {
     text: "Home",
@@ -29,7 +28,7 @@ const navObject = [
   },
 ];
 const Navbar = () => {
-  const { user } = useContext(ContextProvide);
+
   const texts = useLocation();
   const [navClass, SetNavClass] = useState(false);
   const links = navObject.map((item) => (
@@ -87,25 +86,10 @@ const Navbar = () => {
           </h2>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
+          
         </div>
         <div className="navbar-end space-x-3">
-          {user ? (
-            <p className='text-white text-[20px] font-[700]'>{user.displayName}</p>
-          ) : (
-            <>
-              <Link to="/login">
-                <button className="border px-[32px] py-[9px] text-white hover:bg-white hover:text-gray-700">
-                  Login
-                </button>
-              </Link>
-              <Link to="/register">
-                <button className="border px-[32px] py-[9px] text-white hover:bg-white hover:text-gray-700">
-                  Register
-                </button>
-              </Link>
-            </>
-          )}
+        <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
         </div>
       </div>
     </div>
