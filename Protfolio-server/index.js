@@ -5,7 +5,7 @@ require("dotenv").config();
 const nodemailer = require("nodemailer");
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://ruhitbaidya.vercel.app"],
+    origin:  "https://ruhitbaidya.vercel.app",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
