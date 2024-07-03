@@ -11,7 +11,7 @@ const Projects = () => {
           </div>
           <div className="my-[50px]">
             <div>
-              <div className="grid grid-cols-2 gap-[30px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                 <div className="hoverImage">
                   <img src='https://i.ibb.co/cJV8Yws/glory.png' alt="" />
                 </div>
@@ -48,10 +48,10 @@ const Projects = () => {
                     </p>
 
                     <div className="mt-[20px]">
-                      <p className="font-bold space-x-4">
-                        <Link to="https://github.com/ruhitbaidya/GlassAndCraft-client" target="_blank" className="border border-gray-600 p-[10px]">Client Side</Link>
-                        <Link  to="https://github.com/ruhitbaidya/glassandCraft-server" target="_blank" className="border border-gray-600 p-[10px]">Server Side</Link>
-                        <Link to='https://paper-crafts-glass-art.web.app/' target="_blank" className="border border-gray-600 p-[10px]">Live Link</Link>
+                      <p className="font-bold">
+                        <Link to="https://github.com/ruhitbaidya/GlassAndCraft-client" target="_blank" className="block lg:inline border border-gray-600 p-[10px]">Client Side</Link>
+                        <Link  to="https://github.com/ruhitbaidya/glassandCraft-server" target="_blank" className="block lg:inline border border-gray-600 p-[10px]">Server Side</Link>
+                        <Link to='https://paper-crafts-glass-art.web.app/' target="_blank" className="block lg:inline border border-gray-600 p-[10px]">Live Link</Link>
                       </p>
                     </div>
                   </div>
@@ -59,7 +59,7 @@ const Projects = () => {
               </div>
             </div>
             <div className="mt-[80px]">
-              <div className="grid grid-cols-2 gap-[30px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                 <div className="flex items-center">
                   <div className="space-y-4">
                     <h2 className="text-[20px] font-[700]">
@@ -90,10 +90,10 @@ access others data.
                     </p>
 
                     <div className="mt-[20px]">
-                    <p className="font-bold space-x-4">
-                        <Link to="https://github.com/ruhitbaidya/student-tutors-client" target="_blank" className="border border-gray-600 p-[10px]">Client Side</Link>
-                        <Link  to="https://github.com/ruhitbaidya/student-tutors-server" target="_blank" className="border border-gray-600 p-[10px]">Server Side</Link>
-                        <Link to='https://students-tutors.web.app/' target="_blank" className="border border-gray-600 p-[10px]">Live Link</Link>
+                    <p className="font-bold">
+                        <Link to="https://github.com/ruhitbaidya/student-tutors-client" target="_blank" className="block lg:inline border border-gray-600 p-[10px]">Client Side</Link>
+                        <Link  to="https://github.com/ruhitbaidya/student-tutors-server" target="_blank" className="block lg:inline border border-gray-600 p-[10px]">Server Side</Link>
+                        <Link to='https://students-tutors.web.app/' target="_blank" className="block lg:inline border border-gray-600 p-[10px]">Live Link</Link>
                       </p>
                     </div>
                   </div>

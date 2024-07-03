@@ -71,7 +71,7 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <IoMenu />
+              <IoMenu className="text-3xl text-white" />
             </div>
             <ul
               tabIndex={0}
@@ -85,10 +85,9 @@ const Navbar = () => {
             <SiXdadevelopers /> <span>Ruhit Baidya</span>
           </h2>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          
+        <div className="navbar-center">
         </div>
-        <div className="navbar-end space-x-3">
+        <div className="navbar-end space-x-3  hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
         </div>
       </div>

@@ -19,7 +19,7 @@ const Skill = () => {
                 <hr className="border border-gray-600 w-[15%] mx-auto mt-[15px]" />
                 <p className="text-center mt-[20px]">Highly Skilled At Progressive enhancement Design & Develope</p>
                 <div className="mt-[20px]">
-                    <div className="grid grid-cols-4 gap-[40px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-[40px]">
                         <div className="border hover:border-green-400 text-center p-[20px]">
                             <p className="text-3xl flex justify-center"><FaHtml5 /></p>
                             <p>HTML</p>

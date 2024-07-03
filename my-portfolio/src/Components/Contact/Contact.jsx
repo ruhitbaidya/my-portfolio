@@ -42,7 +42,7 @@ const Contact = () => {
                 </h2>
                 <hr className="border border-white  w-[15%] mx-auto mt-[15px]" />
               </div>
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="flex justify-center items-center">
                   <div>
                     <div className="text-center">

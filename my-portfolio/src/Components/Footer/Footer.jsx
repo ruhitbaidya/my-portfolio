@@ -11,7 +11,7 @@ const Footer = () => {
     <div className="bg-gray-800 py-[50px]">
       <div className="container mx-auto px-[20px]">
         <div>
-          <h2 className="btn text-white btn-ghost text-2xl flex justify-center items-center">
+          <h2 className="btn text-white btn-ghost hover:bg-transparent text-2xl flex justify-center items-center">
             {" "}
             <SiXdadevelopers /> <span>Ruhit Baidya</span>
           </h2>
