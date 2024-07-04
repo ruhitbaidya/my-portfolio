@@ -35,12 +35,12 @@ const Banner = () => {
                     delaySpeed={1000}
                   />
                 </h2>
-                <button className="px-[35px] py-[10px] border text-white hover:bg-white hover:text-gray-700 mt-[30px] mr-[10px]">
+                <button className="px-[35px] py-[10px] border text-white hover:bg-white transition ease-in delay-150 hover:text-gray-700 mt-[30px] mr-[10px]">
                   <Dink to="https://drive.usercontent.google.com/download?id=1sBBOEXcoXRaeEr48Du-SwrEyu-vXyhlr">
                     Download Resume
                   </Dink>
                 </button>
-                <button className="px-[35px] py-[10px] border text-white hover:bg-white hover:text-gray-700 mt-[30px]">
+                <button className="px-[35px] py-[10px] border text-white hover:bg-white transition ease-in delay-150 hover:text-gray-700 mt-[30px]">
                   <Link
                     spy={true}
                     smooth={true}
