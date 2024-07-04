@@ -46,6 +46,16 @@ const About = () => {
                       ruhitbaidya01@gmail.com
                     </p>
                   </div>
+                  <div className="  p-[15px]  items-center flex-col">
+                    <h2 className="text-[20px] font-[700] text-gray-700">
+                      Education
+                    </h2>
+                    <p className="text-gray-700 text-[600]">
+                      Bachelor of Arts 2018 - present <br/>
+  Sreemangal Govt College at Sreemangal, Moulvibazar.
+  
+                    </p>
+                  </div>
                   <div className=" p-[15px]  items-center flex-col">
                     <h2 className="text-[20px] font-[700] text-gray-700">
                       Date Of Birth
@@ -63,7 +73,7 @@ const About = () => {
             </div>
             <div>
               <div className='lg:w-[80%] mx-auto flex items-center justify-center'>
-              <img className='h-[500px] object-cover rounded-lg border-4 border-green-300' src='https://i.ibb.co/ncv73r1/ruhit.jpg' alt="" />
+                <img className='h-[500px] object-cover rounded-lg border-4 border-green-300' src='https://i.ibb.co/ncv73r1/ruhit.jpg' alt="" />
               </div>
             </div>
           </div>
