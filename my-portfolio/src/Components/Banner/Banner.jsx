@@ -55,8 +55,8 @@ const Banner = () => {
 
               </div>
               <div className="flex justify-center items-center">
-                <div className="bg-white rotate-3 rounded-lg">
-                  <div className="-rotate-3">
+                <div className="bg-white rotate-6 hover:-rotate-6 transition duration-300 ease-out rounded-lg">
+                  <div className="-rotate-6 hover:rotate-6 transition duration-300 ease-out">
                     <img className='h-[400px] object-cover rounded-lg border-4 border-white' src='https://i.ibb.co/ncv73r1/ruhit.jpg' alt="" />
                   </div>
                 </div>
