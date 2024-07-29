@@ -36,7 +36,7 @@ const Banner = () => {
                   />
                 </h2>
                 <button className="px-[35px] py-[10px] border text-white hover:bg-white transition ease-in delay-150 hover:text-gray-700 mt-[30px] mr-[10px]">
-                  <Dink to="https://drive.usercontent.google.com/download?id=1sBBOEXcoXRaeEr48Du-SwrEyu-vXyhlr">
+                  <Dink to="https://drive.usercontent.google.com/download?id=1alWxm5x_8gxyQkOhJ6S7bPGlRv6HnNfY">
                     Download Resume
                   </Dink>
                 </button>
