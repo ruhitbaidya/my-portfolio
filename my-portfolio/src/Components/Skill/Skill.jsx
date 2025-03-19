@@ -10,6 +10,7 @@ import { SiMongodb } from "react-icons/si";
 import { SiFirebase } from "react-icons/si";
 import { FaGithub } from "react-icons/fa6";
 import { SiJsonwebtokens } from "react-icons/si";
+import imag1 from "../../assets/react.png"
 const Skill = () => {
   return (
     <div id="skill">
@@ -41,7 +42,9 @@ const Skill = () => {
                             <p>JavaScript</p>
                         </div>
                         <div className="border hover:border-green-400 text-center p-[20px]">
-                            <p className="text-3xl flex justify-center"><FaReact /></p>
+                            <div className="flex justify-center items-center">
+                                <img className="w-[50px] h-[50px]" src={imag1} alt="" />
+                            </div>
                             <p>ReactJS</p>
                         </div>
                         <div className="border hover:border-green-400 text-center p-[20px]">
