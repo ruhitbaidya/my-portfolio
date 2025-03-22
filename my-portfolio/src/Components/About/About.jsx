@@ -51,9 +51,8 @@ const About = () => {
                       Education
                     </h2>
                     <p className="text-gray-700 text-[600]">
-                      Bachelor of Arts 2018 - present <br/>
-  Sreemangal Govt College at Sreemangal, Moulvibazar.
-  
+                      Bachelor of Arts 2018 - present <br />
+                      Sreemangal Govt College at Sreemangal, Moulvibazar.
                     </p>
                   </div>
                   <div className=" p-[15px]  items-center flex-col">
@@ -72,8 +71,12 @@ const About = () => {
               </div>
             </div>
             <div>
-              <div className='lg:w-[80%] mx-auto flex items-center justify-center'>
-                <img className='h-[500px] object-cover rounded-lg border-4 border-green-300' src='https://i.ibb.co/ncv73r1/ruhit.jpg' alt="" />
+              <div className="lg:w-[80%] mx-auto flex items-center justify-center">
+                <img
+                  className="h-[600px] w-full object-cover rounded-lg border-4 border-green-300"
+                  src="https://i.ibb.co.com/8gBtsN5J/ruhitbaidya.jpg"
+                  alt=""
+                />
               </div>
             </div>
           </div>

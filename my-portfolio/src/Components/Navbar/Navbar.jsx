@@ -1,6 +1,6 @@
 import { IoMenu } from "react-icons/io5";
 import { SiXdadevelopers } from "react-icons/si";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Link as PageLink } from "react-scroll";
 import "./Style.css";
 import { useEffect, useState } from "react";
@@ -28,7 +28,6 @@ const navObject = [
   },
 ];
 const Navbar = () => {
-
   const texts = useLocation();
   const [navClass, SetNavClass] = useState(false);
   const links = navObject.map((item) => (
@@ -78,6 +77,9 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {links}
+              <button className="py-[5px] px-[22px] border border-gray-700 text-gray-700">
+                <Link to="/blog">Blog</Link>
+              </button>
             </ul>
           </div>
           <h2 className="btn text-white btn-ghost text-xl flex justify-center items-center">
@@ -85,10 +87,12 @@ const Navbar = () => {
             <SiXdadevelopers /> <span>Ruhit Baidya</span>
           </h2>
         </div>
-        <div className="navbar-center">
-        </div>
+        <div className="navbar-center"></div>
         <div className="navbar-end space-x-3  hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
+          <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
+          <button className="py-[5px] px-[22px] border text-white">
+            <Link to="/blog">Blog</Link>
+          </button>
         </div>
       </div>
     </div>
