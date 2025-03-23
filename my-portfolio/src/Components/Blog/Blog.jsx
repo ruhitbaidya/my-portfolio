@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { SiXdadevelopers } from "react-icons/si";
 import { Link } from "react-router-dom";
-import { getApi } from "../../../../../portfolio-dashboard/src/config/ApiCalling";
-import { port } from "../../../../../portfolio-dashboard/src/config/config";
 
 const Blog = () => {
   const [blog, setBlog] = useState(null);
   const getBlogs = async () => {
-    const res = await getApi(`${port}/get-blog`);
-    setBlog(res.data);
+    const res = await fetch(`http://localhost:5000/get-blog`);
+    const result = await res.json();
+    console.log(result);
+    setBlog(result.data);
   };
   useEffect(() => {
     getBlogs();

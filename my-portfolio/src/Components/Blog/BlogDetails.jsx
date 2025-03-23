@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getApi } from "../../../../../portfolio-dashboard/src/config/ApiCalling";
-import { port } from "../../../../../portfolio-dashboard/src/config/config";
 import { SiXdadevelopers } from "react-icons/si";
 
 const BlogDetails = () => {
@@ -9,8 +7,9 @@ const BlogDetails = () => {
   const { id } = useParams();
   console.log(id);
   const getBlogDetails = async () => {
-    const res = await getApi(`${port}/get-singal-blog/${id}`);
-    setBlogDel(res.data);
+    const res = await fetch(`http://localhost:5000/get-singal-blog/${id}`);
+    const result = await res.json();
+    setBlogDel(result.data);
   };
   console.log(blogdel);
   useEffect(() => {

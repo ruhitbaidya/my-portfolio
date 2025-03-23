@@ -6,36 +6,35 @@ import { Link } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Style.css";
 import { useState } from "react";
 const Contact = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    setLoading(true)
+    setLoading(true);
     axios
-      .post("https://my-portfolio-2mqb.vercel.app/sendMessage", data)
+      .post("http://localhost:5000/sendMessage", data)
       .then((res) => {
-        if(res.data.success){
-          setLoading(false)
-          toast.success("Message Send Successfully")
-          reset()
-          
+        if (res.data.success) {
+          setLoading(false);
+          toast.success("Message Send Successfully");
+          reset();
         }
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div id='contact' className="setBg-contact">
+    <div id="contact" className="setBg-contact">
       <div className="bg-colors py-[100px]">
         <div className="container mx-auto px-[20px] text-white">
           <div>
             <div>
-            <ToastContainer />
+              <ToastContainer />
               <div>
                 <h2 className="text-center text-white text-3xl font-[700]">
                   Contact Me
@@ -65,17 +64,26 @@ const Contact = () => {
                     </div>
                     <div className="flex justify-center items-center gap-[20px] text-[35px] mt-[30px]">
                       <span>
-                        <Link to="https://www.linkedin.com/in/ruhitbaidya" target="_blank">
+                        <Link
+                          to="https://www.linkedin.com/in/ruhitbaidya"
+                          target="_blank"
+                        >
                           <FaLinkedin />{" "}
                         </Link>
                       </span>
                       <span>
-                        <Link to="https://www.facebook.com/ruhitbaidya01" target="_blank">
+                        <Link
+                          to="https://www.facebook.com/ruhitbaidya01"
+                          target="_blank"
+                        >
                           <FaFacebookSquare />{" "}
                         </Link>
                       </span>
                       <span>
-                        <Link to='https://github.com/ruhitbaidya' target="_blank">
+                        <Link
+                          to="https://github.com/ruhitbaidya"
+                          target="_blank"
+                        >
                           <FaGithubSquare />{" "}
                         </Link>
                       </span>
@@ -122,9 +130,11 @@ const Contact = () => {
                     </div>
                     <div>
                       <button className="w-full py-[5px] border hover:bg-white hover:text-black">
-                        {
-                          loading ? <span className="loading loading-spinner loading-xs"></span> : 'Submit'
-                        }                        
+                        {loading ? (
+                          <span className="loading loading-spinner loading-xs"></span>
+                        ) : (
+                          "Submit"
+                        )}
                       </button>
                     </div>
                   </form>

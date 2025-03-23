@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import imageProd from "../../assets/prodGenious.png";
 import "./Style.css";
 import { useEffect, useState } from "react";
-import { getApi } from "../../../../../portfolio-dashboard/src/config/ApiCalling";
-import { port } from "../../../../../portfolio-dashboard/src/config/config";
 const Projects = () => {
   const [projects, setProjects] = useState(null);
   const getDatas = async () => {
-    const res = await getApi(`${port}/getAllProject`);
-    setProjects(res.data);
+    const res = await fetch(`http://localhost:5000/getAllProject`);
+    const result = await res.json();
+    setProjects(result.data);
   };
 
   useEffect(() => {
