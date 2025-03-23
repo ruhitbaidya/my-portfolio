@@ -7,7 +7,9 @@ const BlogDetails = () => {
   const { id } = useParams();
   console.log(id);
   const getBlogDetails = async () => {
-    const res = await fetch(`http://localhost:5000/get-singal-blog/${id}`);
+    const res = await fetch(
+      `https://portfolio-server-theta-seven.vercel.app/get-singal-blog/${id}`
+    );
     const result = await res.json();
     setBlogDel(result.data);
   };

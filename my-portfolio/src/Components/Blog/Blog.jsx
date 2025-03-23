@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const Blog = () => {
   const [blog, setBlog] = useState(null);
   const getBlogs = async () => {
-    const res = await fetch(`http://localhost:5000/get-blog`);
+    const res = await fetch(
+      `https://portfolio-server-theta-seven.vercel.app/get-blog`
+    );
     const result = await res.json();
     console.log(result);
     setBlog(result.data);

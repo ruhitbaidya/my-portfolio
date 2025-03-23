@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 const Projects = () => {
   const [projects, setProjects] = useState(null);
   const getDatas = async () => {
-    const res = await fetch(`http://localhost:5000/getAllProject`);
+    const res = await fetch(
+      `https://portfolio-server-theta-seven.vercel.app/getAllProject`
+    );
     const result = await res.json();
     setProjects(result.data);
   };

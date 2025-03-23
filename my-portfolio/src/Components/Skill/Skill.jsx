@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 const Skill = () => {
   const [skills, setSkills] = useState(null);
   const getSkillIcons = async () => {
-    const res = await fetch(`http://localhost:5000/get-skills`);
+    const res = await fetch(
+      `https://portfolio-server-theta-seven.vercel.app/get-skills`
+    );
     const result = await res.json();
     console.log(result.data);
     setSkills(result.data);

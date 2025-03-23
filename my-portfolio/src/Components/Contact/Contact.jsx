@@ -17,7 +17,7 @@ const Contact = () => {
   const onSubmit = (data) => {
     setLoading(true);
     axios
-      .post("http://localhost:5000/sendMessage", data)
+      .post("https://portfolio-server-theta-seven.vercel.app/sendMessage", data)
       .then((res) => {
         if (res.data.success) {
           setLoading(false);
