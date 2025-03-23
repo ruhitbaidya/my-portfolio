@@ -90,9 +90,11 @@ const Navbar = () => {
         <div className="navbar-center"></div>
         <div className="navbar-end space-x-3  hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
-          <button className="py-[5px] px-[22px] border text-white">
-            <Link to="/blog">Blog</Link>
-          </button>
+          <Link to="/blog">
+            <button className="py-[5px] px-[22px] border text-white">
+              Blog
+            </button>
+          </Link>
         </div>
       </div>
     </div>

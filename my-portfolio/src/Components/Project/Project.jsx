@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import imageProd from "../../assets/prodGenious.png";
 import "./Style.css";
+import { useEffect, useState } from "react";
+import { getApi } from "../../../../../portfolio-dashboard/src/config/ApiCalling";
+import { port } from "../../../../../portfolio-dashboard/src/config/config";
 const Projects = () => {
+  const [projects, setProjects] = useState(null);
+  const getDatas = async () => {
+    const res = await getApi(`${port}/getAllProject`);
+    setProjects(res.data);
+  };
+
+  useEffect(() => {
+    getDatas();
+  }, []);
   return (
     <div id="projects" className="bg-gray-300">
       <div className="container mx-auto px-[20px] py-[100px]">
@@ -77,72 +89,26 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-[80px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                <div className="flex items-center">
-                  <div className="space-y-4">
-                    <h2 className="text-[20px] font-[700]">
-                      {" "}
-                      Teachable - Collaborative Study Platform ( Full stack )
-                    </h2>
-                    <ul className="list-disc ml-[25px]">
-                      <li>
-                        <span className="font-bold">User Profiles:</span> Any
-                        User can create account and he she can select the role
-                        as student, admin, tutor and they are can control their
-                        access only admin can change the platform.
-                      </li>
-                      <li>
-                        <span className="font-bold">Dashboard:</span> the
-                        student admin tutor separate dashboard hone dashboard
-                        they can easily visit and control they student can bye
-                        tutors courses and can use hone dashboard any other can
-                        can not access others data.
-                      </li>
-                      <li>
-                        <span className="font-bold">Payment Method:</span> only
-                        student can payment the course using card payment , (
-                        stripe ) payment .
-                      </li>
-                    </ul>
-                    <p>
-                      <span className="font-bold">Technologies:</span> React.js,
-                      Tailwind CSS express.js, fireabase, MongoDB. stripe
-                      payment method
-                    </p>
-
-                    <div className="mt-[20px]">
-                      <p className="font-bold">
-                        <Link
-                          to="https://github.com/ruhitbaidya/student-tutors-client"
-                          target="_blank"
-                          className="block lg:inline border border-gray-600 p-[10px]"
-                        >
-                          Client Side
-                        </Link>
-                        <Link
-                          to="https://github.com/ruhitbaidya/student-tutors-server"
-                          target="_blank"
-                          className="block lg:inline border border-gray-600 p-[10px]"
-                        >
-                          Server Side
-                        </Link>
-                        <Link
-                          to="https://students-tutors.web.app/"
-                          target="_blank"
-                          className="block lg:inline border border-gray-600 p-[10px]"
-                        >
-                          Live Link
-                        </Link>
-                      </p>
+            {projects &&
+              projects.map((item) => (
+                <>
+                  <div className="mt-[80px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                      <div className="flex items-center">
+                        <div className="space-y-4">
+                          <div
+                            dangerouslySetInnerHTML={{ __html: item.content }}
+                          />
+                        </div>
+                      </div>
+                      <div className="hoverImage">
+                        <img src={item.image} alt="" />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="hoverImage">
-                  <img src="https://i.ibb.co/Dgtdv9M/teachable.png" alt="" />
-                </div>
-              </div>
-            </div>
+                </>
+              ))}
+
             <div className="mt-[80px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                 <div className="hoverImage">
@@ -152,7 +118,8 @@ const Projects = () => {
                   <div className="space-y-4">
                     <h2 className="text-[20px] font-[700]">
                       {" "}
-                      Prod Genius - Alternative Product Information System. ( Full Stack)
+                      Prod Genius - Alternative Product Information System. (
+                      Full Stack)
                     </h2>
                     <ul className="list-disc ml-[25px]">
                       <li>
@@ -160,15 +127,17 @@ const Projects = () => {
                           Firebase Authentication :
                         </span>{" "}
                         This Site User Control With Help of Firebase.
-
                       </li>
                       <li>
-                        <span className="font-bold">Json Web Token:</span>  this method user for user authentication if any user try to access other user
-                        value this jwt can not give access with our valid access.
+                        <span className="font-bold">Json Web Token:</span> this
+                        method user for user authentication if any user try to
+                        access other user value this jwt can not give access
+                        with our valid access.
                       </li>
                       <li>
-                        <span className="font-bold">Site Recommendation:</span> This Site Recommendation If You create A Account You can do
-                        recommendation any of product.
+                        <span className="font-bold">Site Recommendation:</span>{" "}
+                        This Site Recommendation If You create A Account You can
+                        do recommendation any of product.
                       </li>
                     </ul>
                     <p>

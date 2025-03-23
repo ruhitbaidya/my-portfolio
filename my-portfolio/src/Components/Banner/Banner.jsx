@@ -15,11 +15,14 @@ const Banner = () => {
                 <h2 className="text-[22px] lg:text-5xl font-[700] text-white mb-[20px]">
                   Hi, I am Ruhit Baidya
                 </h2>
-                <p className=" text-white text-[16px] lg:text-[19px]">{`i am a MERN Stack Developer  Front-end Specialist Crafting dynamic and responsive web applications with MongoDB, Express.js, React, and Node.js.`}</p>
+                <p className=" text-white text-[16px] lg:text-[19px]">{`i am a MERN Stack Developer  Front-end and backend  Crafting dynamic and responsive web applications with MongoDB, Express.js, React, Node.js. TypeScript, Next JS, Redux.`}</p>
                 <h2 className="lg:text-4xl font-[600] text-white mt-[30px]">
                   Using Technology{" "}
                   <Typewriter
                     words={[
+                      " TypeScript",
+                      " Redux",
+                      " Next JS",
                       " React JS",
                       " Express JS",
                       " Node JS",
