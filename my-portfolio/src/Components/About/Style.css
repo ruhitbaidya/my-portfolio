@@ -1,3 +1,30 @@
-.aboutDesign{
-    background : #7e7a7a3b;
-}
+/* Add to your Style.css */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(224, 242, 254, 0.8);
+  }
+  
+  .gradient-underline {
+    position: relative;
+  }
+  
+  .gradient-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #4f83ff, #38bdf8);
+    border-radius: 3px;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  .profile-image:hover {
+    animation: float 4s ease-in-out infinite;
+  }

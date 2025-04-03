@@ -1,140 +1,256 @@
-import axios from "axios";
 import { useForm } from "react-hook-form";
-import { MdOutlineMail } from "react-icons/md";
+import { MdOutlineMail, MdLocationOn } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
+import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaGithubSquare } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import "./Style.css";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import { Typewriter } from "react-simple-typewriter";
+
 const Contact = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    setLoading(true)
+    setLoading(true);
     axios
       .post("https://my-portfolio-2mqb.vercel.app/sendMessage", data)
       .then((res) => {
-        if(res.data.success){
-          setLoading(false)
-          toast.success("Message Send Successfully")
-          reset()
-          
+        if (res.data.success) {
+          toast.success("Message sent successfully!");
+          reset();
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        toast.error("Failed to send message");
+        console.error(err);
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
-    <div id='contact' className="setBg-contact">
-      <div className="bg-colors py-[100px]">
-        <div className="container mx-auto px-[20px] text-white">
-          <div>
-            <div>
-            <ToastContainer />
-              <div>
-                <h2 className="text-center text-white text-3xl font-[700]">
-                  Contact Me
-                </h2>
-                <hr className="border border-white  w-[15%] mx-auto mt-[15px]" />
-              </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="flex justify-center items-center">
+    <section
+      id="contact"
+      className="relative py-24 min-h-screen bg-slate-900 overflow-hidden"
+    >
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-cyan-400/10 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 -right-20 w-96 h-96 bg-blue-400/10 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-indigo-400/10 rounded-full filter blur-3xl animate-blob"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <div className="flex items-center gap-3 justify-center mb-12">
+          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+          <h2 className="text-xl font-medium tracking-wider text-cyan-400">
+            GET IN TOUCH
+          </h2>
+          <div className="text-slate-400 text-sm">
+            <Typewriter
+              words={["Contact Me", "Send Message", "Let's Talk"]}
+              loop={true}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </div>
+        </div>
+
+        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 text-center">
+          Contact{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            Me
+          </span>
+        </h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full mb-12"></div>
+
+        {/* Contact Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Contact Info */}
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-2">
+            <div className="space-y-8">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                  <div className="p-2 bg-cyan-400/10 rounded-lg text-cyan-400">
+                    <MdLocationOn className="text-2xl" />
+                  </div>
                   <div>
-                    <div className="text-center">
-                      <div className=" p-[15px] border-b">
-                        <span className="text-[25px] flex justify-center items-center mb-[15px]">
-                          <MdOutlineMail />
-                        </span>{" "}
-                        <span className="font-[700] text-[20px]">
-                          ruhitbaidya01@gmail.com
-                        </span>
-                      </div>
-                      <div className=" p-[15px] border-b">
-                        <span className="text-[25px] flex justify-center items-center mb-[15px]">
-                          <IoCall />
-                        </span>{" "}
-                        <span className="font-[700] text-[20px]">
-                          +88 01742772705
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center gap-[20px] text-[35px] mt-[30px]">
-                      <span>
-                        <Link to="https://www.linkedin.com/in/ruhitbaidya" target="_blank">
-                          <FaLinkedin />{" "}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to="https://www.facebook.com/ruhitbaidya01" target="_blank">
-                          <FaFacebookSquare />{" "}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to='https://github.com/ruhitbaidya' target="_blank">
-                          <FaGithubSquare />{" "}
-                        </Link>
-                      </span>
-                    </div>
+                    <h3 className="text-lg font-semibold text-white">
+                      Location
+                    </h3>
+                    <p className="text-slate-300">Bangladesh</p>
                   </div>
                 </div>
-                <div>
-                  <form
-                    onSubmit={handleSubmit(onSubmit)}
-                    className="mt-[30px] p-[20px] space-y-[15px]"
+
+                <div className="flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                  <div className="p-2 bg-blue-400/10 rounded-lg text-blue-400">
+                    <MdOutlineMail className="text-2xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Email</h3>
+                    <a
+                      href="mailto:ruhitbaidya01@gmail.com"
+                      className="text-slate-300 hover:text-cyan-400 transition-colors"
+                    >
+                      ruhitbaidya01@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                  <div className="p-2 bg-indigo-400/10 rounded-lg text-indigo-400">
+                    <IoCall className="text-2xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Phone</h3>
+                    <a
+                      href="tel:+8801742772705"
+                      className="text-slate-300 hover:text-cyan-400 transition-colors"
+                    >
+                      +88 01792150202
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-slate-700">
+                <h3 className="text-lg font-semibold text-white mb-4 text-center">
+                  Connect With Me
+                </h3>
+                <div className="flex justify-center gap-6">
+                  <Link
+                    to="https://www.linkedin.com/in/ruhitbaidya"
+                    target="_blank"
+                    className="text-slate-300 hover:text-[#0a66c2] transition-colors"
                   >
-                    <div className="">
-                      <div className="flex-1">
-                        <label htmlFor="name">Name *</label>
-                        <input
-                          {...register("name")}
-                          className="w-full p-[10px] bg-transparent border focus:outline-none"
-                          type="text"
-                          placeholder="Enter Your Name"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="">Email *</label>
-                      <input
-                        {...register("email")}
-                        className="w-full p-[10px] bg-transparent border focus:outline-none"
-                        type="email"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="">Message</label>
-                      <textarea
-                        {...register("message")}
-                        className="w-full p-[10px] bg-transparent border focus:outline-none"
-                        name="message"
-                        id=""
-                        cols="30"
-                        rows="5"
-                        placeholder="Write Message"
-                      ></textarea>
-                    </div>
-                    <div>
-                      <button className="w-full py-[5px] border hover:bg-white hover:text-black">
-                        {
-                          loading ? <span className="loading loading-spinner loading-xs"></span> : 'Submit'
-                        }                        
-                      </button>
-                    </div>
-                  </form>
+                    <FaLinkedin className="w-6 h-6" />
+                  </Link>
+                  <Link
+                    to="https://github.com/ruhitbaidya"
+                    target="_blank"
+                    className="text-slate-300 hover:text-white transition-colors"
+                  >
+                    <FaGithub className="w-6 h-6" />
+                  </Link>
+                  <Link
+                    to="https://twitter.com/ruhitbaidya"
+                    target="_blank"
+                    className="text-slate-300 hover:text-[#1DA1F2] transition-colors"
+                  >
+                    <FaTwitter className="w-6 h-6" />
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Contact Form */}
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-2">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-slate-300 mb-2"
+                >
+                  Name *
+                </label>
+                <input
+                  {...register("name", { required: true })}
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent placeholder-slate-500"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-slate-300 mb-2"
+                >
+                  Email *
+                </label>
+                <input
+                  {...register("email", { required: true })}
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent placeholder-slate-500"
+                  type="email"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-slate-300 mb-2"
+                >
+                  Message *
+                </label>
+                <textarea
+                  {...register("message", { required: true })}
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent placeholder-slate-500"
+                  rows="4"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                {loading ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+    </section>
   );
 };
 

@@ -1,103 +1,123 @@
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
 import { SiXdadevelopers } from "react-icons/si";
 import { Link, useLocation } from "react-router-dom";
 import { Link as PageLink } from "react-scroll";
-import "./Style.css";
 import { useEffect, useState } from "react";
 
-const navObject = [
-  {
-    text: "Home",
-    tag: "home",
-  },
-  {
-    text: "About",
-    tag: "about",
-  },
-  {
-    text: "Skill",
-    tag: "skill",
-  },
-  {
-    text: "Projects",
-    tag: "projects",
-  },
-  {
-    text: "Contact",
-    tag: "contact",
-  },
+const navItems = [
+  { text: "Home", tag: "home" },
+  { text: "About", tag: "about" },
+  { text: "Skills", tag: "skill" },
+  { text: "Projects", tag: "projects" },
+  { text: "Contact", tag: "contact" },
+  { text: "Services", tag: "service" },
 ];
+
 const Navbar = () => {
-  const texts = useLocation();
-  const [navClass, SetNavClass] = useState(false);
-  const links = navObject.map((item) => (
-    <li key={item.tag}>
-      <PageLink
-        spy={true}
-        smooth={true}
-        offset={-30}
-        activeClass="active"
-        duration={500}
-        className={item.tag === texts.hash ? "active" : ""}
-        to={item.tag}
-      >
-        {item.text}
-      </PageLink>
-    </li>
-  ));
+  const { hash } = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handelScrool = () => {
-      if (window.scrollY > 700) {
-        SetNavClass(true);
-      } else {
-        SetNavClass(false);
-      }
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handelScrool);
-    return () => {
-      window.removeEventListener("scroll", handelScrool);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div
-      className={`w-full z-10  ${
-        navClass ? "my-bg-color fixed top-0 right-0 left-0" : "bg-transparent"
+    <header
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        scrolled ? "bg-[#0f172a] shadow-xl" : "bg-transparent"
       }`}
     >
-      <div className="navbar">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <IoMenu className="text-3xl text-white" />
+      <div className="container mx-auto px-6 py-3">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/">
+            <div className="flex items-center space-x-2">
+              <SiXdadevelopers className="text-3xl text-[#7dd3fc]" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-[#7dd3fc] to-[#38bdf8] bg-clip-text text-transparent">
+                Ruhit Baidya
+              </span>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              {links}
-              <button className="py-[5px] px-[22px] border border-gray-700 text-gray-700">
-                <Link to="/blog">Blog</Link>
-              </button>
-            </ul>
-          </div>
-          <h2 className="btn text-white btn-ghost text-xl flex justify-center items-center">
-            {" "}
-            <SiXdadevelopers /> <span>Ruhit Baidya</span>
-          </h2>
-        </div>
-        <div className="navbar-center"></div>
-        <div className="navbar-end space-x-3  hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-white">{links}</ul>
-          <Link to="/blog">
-            <button className="py-[5px] px-[22px] border text-white">
-              Blog
-            </button>
           </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <ul className="flex space-x-8">
+              {navItems.map((item) => (
+                <li key={item.tag}>
+                  <PageLink
+                    to={item.tag}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className={`cursor-pointer px-3 py-2 text-[#e2e8f0] hover:text-[#7dd3fc] transition-colors ${
+                      hash === `#${item.tag}`
+                        ? "text-[#7dd3fc] font-medium"
+                        : ""
+                    }`}
+                    activeClass="active-nav-item"
+                  >
+                    {item.text}
+                  </PageLink>
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/blog"
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-[#7dd3fc] to-[#38bdf8] text-[#0f172a] font-medium hover:shadow-lg hover:shadow-[#7dd3fc]/20 transition-all"
+            >
+              Blog
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-[#e2e8f0] focus:outline-none"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? (
+              <IoClose className="text-3xl" />
+            ) : (
+              <IoMenu className="text-3xl" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-4">
+            {navItems.map((item) => (
+              <PageLink
+                key={item.tag}
+                to={item.tag}
+                spy={true}
+                smooth={true}
+                offset={-80}
+                duration={500}
+                className={`block px-4 py-3 text-[#e2e8f0] hover:text-[#7dd3fc] rounded-lg transition-colors ${
+                  hash === `#${item.tag}` ? "bg-[#1e293b] text-[#7dd3fc]" : ""
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.text}
+              </PageLink>
+            ))}
+            <Link
+              to="/blog"
+              className="block w-full text-center px-4 py-3 mt-2 rounded-full bg-gradient-to-r from-[#7dd3fc] to-[#38bdf8] text-[#0f172a] font-medium"
+              onClick={() => setMobileOpen(false)}
+            >
+              Blog
+            </Link>
+          </div>
+        )}
       </div>
-    </div>
+    </header>
   );
 };
 

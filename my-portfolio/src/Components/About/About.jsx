@@ -1,88 +1,134 @@
-import "./Style.css";
+import { Typewriter } from "react-simple-typewriter";
+import { FiPenTool, FiCpu, FiHeart } from "react-icons/fi";
+
 const About = () => {
   return (
-    <div id="about" className="">
-      <div className="py-[100px]">
-        <div className="container mx-auto px-[20px]">
-          <h3 className="text-center  text-3xl font-[700]">About Me</h3>
-          <hr className="border border-gray-600 w-[15%] mx-auto mt-[15px]" />
-          <div className="mt-[20px]  rounded-lg grid grid-cols-1 lg:grid-cols-2 items-center">
-            <div>
-              <p className="text-justify p-[20px] ">
-                {` Hello! I'm Ruhit Baidya, a passionate MERN stack  developer
-              specializing in the front-end. I love creating beautiful,
-              responsive, and user-friendly web applications using MongoDB,
-              Express.js, React, and Node.js. With a keen eye for design and a
-              strong foundation in JavaScript, I strive to deliver seamless user
-              experiences.
-            
-              My journey into web development began with a fascination for how
-              websites work and how they are built. Over the years, I've honed
-              my skills through various projects, constantly learning and
-              adapting to new technologies. Whether it's building interactive
-              interfaces, optimizing performance, or integrating APIs, I enjoy
-              tackling challenges and pushing the boundaries of what's possible
-              on the web.
-          
-      
-              In my free time, I enjoy exploring new web development trends,
-              contributing to open-source projects, and sharing my knowledge
-              with the developer community. I'm always eager to collaborate on
-              exciting projects and bring innovative ideas to life.`}
-              </p>
-              <div className="p-[10px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[15px] ">
-                  <div className=" p-[15px]  items-center flex-col">
-                    <h2 className="text-[20px] font-[700] text-gray-700">
-                      Name
-                    </h2>
-                    <p className="text-gray-700 text-[600]">Ruhit Baidya</p>
-                  </div>
-                  <div className="  p-[15px]  items-center flex-col">
-                    <h2 className="text-[20px] font-[700] text-gray-700">
-                      Email
-                    </h2>
-                    <p className="text-gray-700 text-[600]">
-                      ruhitbaidya01@gmail.com
-                    </p>
-                  </div>
-                  <div className="  p-[15px]  items-center flex-col">
-                    <h2 className="text-[20px] font-[700] text-gray-700">
-                      Education
-                    </h2>
-                    <p className="text-gray-700 text-[600]">
-                      Bachelor of Arts 2018 - present <br />
-                      Sreemangal Govt College at Sreemangal, Moulvibazar.
-                    </p>
-                  </div>
-                  <div className=" p-[15px]  items-center flex-col">
-                    <h2 className="text-[20px] font-[700] text-gray-700">
-                      Date Of Birth
-                    </h2>
-                    <p className="text-gray-700 text-[600]">31/03/1998</p>
-                  </div>
-                  <div className=" p-[15px]  items-center flex-col">
-                    <h2 className="text-[20px] font-[700] text-gray-700">
-                      Location
-                    </h2>
-                    <p className="text-gray-700 text-[600]">Bangladesh</p>
-                  </div>
-                </div>
+    <section id="about" className="bg-slate-900 text-slate-100 py-24">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="flex items-center gap-3 mb-16 justify-center">
+          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+          <h2 className="text-xl font-medium tracking-wider text-cyan-400">
+            MY STORY
+          </h2>
+          <div className="text-slate-400 text-sm">
+            <Typewriter
+              words={["The Journey", "The Passion", "The Purpose"]}
+              loop={true}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          {/* Image Section */}
+          <div className="lg:w-2/5 relative group">
+            <div className="relative z-10 overflow-hidden rounded-xl border-2 border-slate-700 group-hover:border-cyan-400/50 transition-all duration-500">
+              <img
+                src="https://i.ibb.co.com/8gBtsN5J/ruhitbaidya.jpg"
+                alt="Ruhit Baidya"
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="absolute -inset-4 border-2 border-cyan-400/30 rounded-xl opacity-0 group-hover:opacity-100 group-hover:animate-[pulse_2s_ease-in-out_infinite] transition-all duration-300 -z-10"></div>
+          </div>
+
+          {/* Content Section */}
+          <div className="lg:w-3/5 space-y-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-white">
+              {`Hello, I'm`}{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                Ruhit Baidya
+              </span>
+            </h3>
+
+            <div className="space-y-6">
+              <div className="relative pl-8 border-l-2 border-cyan-400/30">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-cyan-400 rounded-full"></div>
+                <p className="text-slate-300 leading-relaxed">
+                  {`I'm a full-stack developer with a passion for creating digital experiences that 
+                  are as functional as they are beautiful. My journey in technology began when I 
+                  built my first website at 16, sparking a lifelong fascination with how code 
+                  transforms ideas into reality.`}
+                </p>
+              </div>
+
+              <div className="relative pl-8 border-l-2 border-blue-400/30">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-blue-400 rounded-full"></div>
+                <p className="text-slate-300 leading-relaxed">
+                  {` What drives me is the intersection of creativity and logic. I approach each 
+                  project as a unique puzzle, combining aesthetic sensibility with technical 
+                  precision. For me, development isn't just about writing code—it's about 
+                  crafting solutions that make people's lives easier and more enjoyable.`}
+                </p>
+              </div>
+
+              <div className="relative pl-8 border-l-2 border-indigo-400/30">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-400 rounded-full"></div>
+                <p className="text-slate-300 leading-relaxed">
+                  {`When I'm not immersed in code, you'll find me exploring new technologies, 
+              contributing to open-source projects, or mentoring aspiring developers. 
+              I believe in continuous learning and sharing knowledge to help our 
+              community grow together.`}
+                </p>
               </div>
             </div>
-            <div>
-              <div className="lg:w-[80%] mx-auto flex items-center justify-center">
-                <img
-                  className="h-[600px] w-full object-cover rounded-lg border-4 border-green-300"
-                  src="https://i.ibb.co.com/8gBtsN5J/ruhitbaidya.jpg"
-                  alt=""
-                />
+
+            {/* Personal Values */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700 hover:border-cyan-400/30 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-cyan-400/10 rounded-lg text-cyan-400">
+                    <FiPenTool className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white">
+                    Design Minded
+                  </h4>
+                </div>
+                <p className="text-sm text-slate-400">
+                  I craft interfaces that delight users while maintaining clean,
+                  efficient code architecture.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700 hover:border-blue-400/30 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-blue-400/10 rounded-lg text-blue-400">
+                    <FiCpu className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white">
+                    Technically Versatile
+                  </h4>
+                </div>
+                <p className="text-sm text-slate-400">
+                  From frontend aesthetics to backend logic, I bridge the gap
+                  between design and functionality.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700 hover:border-indigo-400/30 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-indigo-400/10 rounded-lg text-indigo-400">
+                    <FiHeart className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white">
+                    Community Focused
+                  </h4>
+                </div>
+                <p className="text-sm text-slate-400">
+                  I believe in building technology that serves people and
+                  contributes to collective knowledge.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
