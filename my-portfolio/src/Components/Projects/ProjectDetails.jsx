@@ -4,7 +4,6 @@ import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiMongodb } from "react-icons/si";
 
 const ProjectDetails = () => {
-  // Sample project data
   const project = {
     id: 1,
     title: "E-Commerce Platform",
