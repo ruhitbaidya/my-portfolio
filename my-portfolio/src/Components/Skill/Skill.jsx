@@ -9,6 +9,7 @@ const Skill = () => {
     try {
       const res = await fetch(`http://localhost:5000/get-skills`);
       const result = await res.json();
+      console.log(result);
       setSkills(result.data);
     } catch (error) {
       console.error("Error fetching skills:", error);
@@ -94,7 +95,7 @@ const Skill = () => {
                     className="flex flex-col items-center bg-slate-800/50 rounded-lg p-4 border border-slate-700 hover:border-[#38bdf8]/30 transition-colors"
                   >
                     <img
-                      className="h-12 w-12 object-contain mb-2"
+                      className="h-12 w-12 object-contain mb-2 border-slate-700"
                       src={skill.image}
                       alt={skill.title}
                       loading="lazy"
