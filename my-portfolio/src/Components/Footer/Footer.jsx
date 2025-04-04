@@ -19,7 +19,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Brand Column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -54,10 +54,10 @@ const Footer = () => {
                 <FaFacebookSquare size={30} />
               </Link>
               <Link
-                to="https://github.com/ruhitbaidya"
+                to="https://twitter.com"
                 target="_blank"
                 className="text-gray-400 hover:text-white text-xl transition-all duration-300 hover:-translate-y-1"
-                aria-label="GitHub"
+                aria-label="Twitter"
               >
                 <FaTwitter size={30} />
               </Link>
@@ -109,6 +109,36 @@ const Footer = () => {
                 </div>
               </li>
             </ul>
+          </div>
+
+          {/* Subscription Column */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6 relative inline-block">
+              Stay Updated
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#7dd3fc] to-[#38bdf8]"></span>
+            </h3>
+            <p className="text-gray-400 mb-4">
+              Subscribe to my newsletter for the latest updates and insights.
+            </p>
+            <form className="space-y-4">
+              <div>
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38bdf8] focus:border-transparent text-white placeholder-gray-500 transition-all"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#38bdf8]/30 transition-all duration-300 hover:opacity-90"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p className="text-gray-500 text-xs mt-3">
+              I respect your privacy. Unsubscribe at any time.
+            </p>
           </div>
         </div>
 

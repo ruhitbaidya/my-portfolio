@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FiCode, FiCpu, FiLayers } from "react-icons/fi";
+import { Icons } from "../../utils/DynamicColor";
 
 const Skill = () => {
   const [skills, setSkills] = useState(null);
@@ -94,11 +95,10 @@ const Skill = () => {
                     key={skillIndex}
                     className="flex flex-col items-center bg-slate-800/50 rounded-lg p-4 border border-slate-700 hover:border-[#38bdf8]/30 transition-colors"
                   >
-                    <img
-                      className="h-12 w-12 object-contain mb-2 border-slate-700"
-                      src={skill.image}
-                      alt={skill.title}
-                      loading="lazy"
+                    <Icons
+                      iconName={skill?.icon}
+                      size={50}
+                      style={{ color: skill?.color }}
                     />
                     <h3 className="text-sm font-medium text-white text-center">
                       {skill.title}
@@ -120,11 +120,10 @@ const Skill = () => {
                   className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6 text-center transition-all duration-300 hover:border-[#38bdf8] hover:shadow-lg hover:shadow-[#38bdf8]/20 hover:-translate-y-2"
                 >
                   <div className="flex justify-center">
-                    <img
-                      className="h-16 w-16 object-contain"
-                      src={item.image}
-                      alt={item.title}
-                      loading="lazy"
+                    <Icons
+                      iconName={item?.icon}
+                      size={50}
+                      style={{ color: item?.color }}
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-white mt-4">

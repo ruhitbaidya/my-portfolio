@@ -8,8 +8,6 @@ const BlogDetails = () => {
   const blogPost = {
     id: 1,
     title: "Mastering Full-Stack Architecture",
-    excerpt:
-      "A comprehensive guide to building scalable applications with modern technologies.",
     content: `
       <p class="mb-4">Building a full-stack application requires careful consideration of architecture patterns that ensure scalability, maintainability, and performance. In this article, we'll explore the MERN stack (MongoDB, Express, React, Node.js) and how to structure your application for success.</p>
       

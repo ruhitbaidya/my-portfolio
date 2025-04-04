@@ -87,22 +87,6 @@ const Contact = () => {
                     <p className="text-slate-300">Bangladesh</p>
                   </div>
                 </div>
-
-                <div className="flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
-                  <div className="p-2 bg-blue-400/10 rounded-lg text-blue-400">
-                    <MdOutlineMail className="text-2xl" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">Email</h3>
-                    <a
-                      href="mailto:ruhitbaidya01@gmail.com"
-                      className="text-slate-300 hover:text-cyan-400 transition-colors"
-                    >
-                      ruhitbaidya01@gmail.com
-                    </a>
-                  </div>
-                </div>
-
                 <div className="flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
                   <div className="p-2 bg-indigo-400/10 rounded-lg text-indigo-400">
                     <IoCall className="text-2xl" />
@@ -114,6 +98,20 @@ const Contact = () => {
                       className="text-slate-300 hover:text-cyan-400 transition-colors"
                     >
                       +88 01792150202
+                    </a>
+                  </div>
+                </div>
+                <div className="col-span-2 flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                  <div className="p-2 bg-blue-400/10 rounded-lg text-blue-400">
+                    <MdOutlineMail className="text-2xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Email</h3>
+                    <a
+                      href="mailto:ruhitbaidya01@gmail.com"
+                      className="text-slate-300 hover:text-cyan-400 transition-colors"
+                    >
+                      ruhitbaidya01@gmail.com
                     </a>
                   </div>
                 </div>

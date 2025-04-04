@@ -3,7 +3,7 @@ import Banner from "../Components/Banner/Banner";
 import Contact from "../Components/Contact/Contact";
 import Skill from "../Components/Skill/Skill";
 import Projects from "../Components/Project/Project";
-import Services from "../Components/Services/Services";
+import Blogs from "../Components/Blog/Blogs";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Banner />
       <About />
       <Skill />
-      <Services />
+      <Blogs />
       <Projects />
       <Contact />
     </div>
