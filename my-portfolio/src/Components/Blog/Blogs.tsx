@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 const Blogs = () => {
   return (
-    <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen py-16 overflow-hidden">
+    <div className="relative bg-slate-900 text-slate-100 min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full mix-blend-overlay filter blur-3xl"></div>
@@ -53,14 +54,14 @@ const Blogs = () => {
               />
             </div>
             <div className="p-6">
-              <div className="flex gap-2 mb-4">
+              {/* <div className="flex gap-2 mb-4">
                 <span className="text-xs font-semibold px-3 py-1 bg-cyan-400/10 text-cyan-400 rounded-full">
                   MERN Stack
                 </span>
                 <span className="text-xs text-slate-400 self-center">
                   12 min read
                 </span>
-              </div>
+              </div> */}
               <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
                 Mastering Full-Stack Architecture
               </h3>
@@ -102,14 +103,14 @@ const Blogs = () => {
               />
             </div>
             <div className="p-6">
-              <div className="flex gap-2 mb-4">
+              {/* <div className="flex gap-2 mb-4">
                 <span className="text-xs font-semibold px-3 py-1 bg-purple-400/10 text-purple-400 rounded-full">
                   React
                 </span>
                 <span className="text-xs text-slate-400 self-center">
                   8 min read
                 </span>
-              </div>
+              </div> */}
               <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
                 Advanced React Performance Optimization
               </h3>
@@ -151,14 +152,14 @@ const Blogs = () => {
               />
             </div>
             <div className="p-6">
-              <div className="flex gap-2 mb-4">
+              {/* <div className="flex gap-2 mb-4">
                 <span className="text-xs font-semibold px-3 py-1 bg-amber-400/10 text-amber-400 rounded-full">
                   TypeScript
                 </span>
                 <span className="text-xs text-slate-400 self-center">
                   15 min read
                 </span>
-              </div>
+              </div> */}
               <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
                 TypeScript Best Practices for 2023
               </h3>
@@ -192,10 +193,14 @@ const Blogs = () => {
 
         {/* View all button */}
         <div className="text-center mt-16">
-          <button className="relative px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 group overflow-hidden">
-            <span className="relative z-10">View All Articles</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></span>
-          </button>
+          <Link to="/blog">
+            <button
+              type="submit"
+              className="px-6 py-3 bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#38bdf8]/30 transition-all duration-300 hover:opacity-90"
+            >
+              View All Article
+            </button>
+          </Link>
         </div>
       </div>
     </div>

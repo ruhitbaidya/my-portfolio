@@ -146,24 +146,10 @@ const Footer = () => {
         <div className="w-full h-px bg-gradient-to-r from-transparent via-[#334155] to-transparent my-12"></div>
 
         {/* Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Ruhit Baidya. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link
-              to="/privacy"
-              className="text-gray-400 hover:text-[#38bdf8] transition-colors text-sm"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="text-gray-400 hover:text-[#38bdf8] transition-colors text-sm"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

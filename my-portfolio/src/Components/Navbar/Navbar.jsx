@@ -10,7 +10,6 @@ const navItems = [
   { text: "Skills", tag: "skill" },
   { text: "Projects", tag: "projects" },
   { text: "Contact", tag: "contact" },
-  { text: "Services", tag: "service" },
 ];
 
 const Navbar = () => {

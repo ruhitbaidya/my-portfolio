@@ -1,6 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiMongodb } from "react-icons/si";
+// import { FaReact, FaNodeJs } from "react-icons/fa";
+// import { SiTypescript, SiTailwindcss, SiMongodb } from "react-icons/si";
 import { Link } from "react-router-dom";
 const Projects = () => {
   // Sample projects data
@@ -44,25 +44,28 @@ const Projects = () => {
   ];
 
   // Technology icons mapping
-  const techIcons = {
-    React: <FaReact className="text-cyan-400" />,
-    "Node.js": <FaNodeJs className="text-green-500" />,
-    MongoDB: <SiMongodb className="text-green-400" />,
-    TypeScript: <SiTypescript className="text-blue-400" />,
-    Tailwind: <SiTailwindcss className="text-cyan-300" />,
-    Firebase: <div className="text-orange-400">FB</div>,
-    JavaScript: <div className="text-yellow-400">JS</div>,
-    API: <div className="text-purple-400">API</div>,
-    "Next.js": <div className="text-white">NXT</div>,
-    MySQL: <div className="text-blue-300">SQL</div>,
-    "React Native": <FaReact className="text-sky-400" />,
-    Python: <div className="text-blue-500">PY</div>,
-    ML: <div className="text-pink-400">ML</div>,
-    "Chart.js": <div className="text-red-400">CH</div>,
-  };
-
+  // const techIcons = {
+  //   React: <FaReact className="text-cyan-400" />,
+  //   "Node.js": <FaNodeJs className="text-green-500" />,
+  //   MongoDB: <SiMongodb className="text-green-400" />,
+  //   TypeScript: <SiTypescript className="text-blue-400" />,
+  //   Tailwind: <SiTailwindcss className="text-cyan-300" />,
+  //   Firebase: <div className="text-orange-400">FB</div>,
+  //   JavaScript: <div className="text-yellow-400">JS</div>,
+  //   API: <div className="text-purple-400">API</div>,
+  //   "Next.js": <div className="text-white">NXT</div>,
+  //   MySQL: <div className="text-blue-300">SQL</div>,
+  //   "React Native": <FaReact className="text-sky-400" />,
+  //   Python: <div className="text-blue-500">PY</div>,
+  //   ML: <div className="text-pink-400">ML</div>,
+  //   "Chart.js": <div className="text-red-400">CH</div>,
+  // };
+  //
   return (
-    <div className="bg-slate-900 text-slate-100 min-h-screen">
+    <div
+      id="projects"
+      className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen pb-16 overflow-hidden"
+    >
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900/30 z-10"></div>
         <div className="container mx-auto px-6 py-24  relative z-20">
@@ -133,7 +136,7 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  {/* <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, index) => (
                       <div
                         key={index}
@@ -143,10 +146,10 @@ const Projects = () => {
                         <span>{tech}</span>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
 
                   <div className="flex justify-between items-center pt-4 border-t border-slate-700">
-                    <div className="flex flex-wrap gap-2">
+                    {/* <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, index) => (
                         <span
                           key={index}
@@ -155,7 +158,8 @@ const Projects = () => {
                           #{tag}
                         </span>
                       ))}
-                    </div>
+                    </div> */}
+                    <div></div>
                   </div>
                 </div>
               </div>
@@ -165,8 +169,11 @@ const Projects = () => {
       </Link>
       <div className="mt-[40px] text-center">
         <Link to={`/project`}>
-          <button className=" text-[18px] px-[40px] py-[15px] bg-slate-700/50 rounded-lg border border-slate-600">
-            All Projects
+          <button
+            type="submit"
+            className="px-6 py-3 bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#38bdf8]/30 transition-all duration-300 hover:opacity-90"
+          >
+            View All Projects
           </button>
         </Link>
       </div>

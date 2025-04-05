@@ -1,5 +1,4 @@
 import { Typewriter } from "react-simple-typewriter";
-import { FiPenTool, FiCpu, FiHeart } from "react-icons/fi";
 
 const About = () => {
   return (
@@ -31,7 +30,7 @@ const About = () => {
               <img
                 src="https://i.ibb.co.com/8gBtsN5J/ruhitbaidya.jpg"
                 alt="Ruhit Baidya"
-                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="absolute -inset-4 border-2 border-cyan-400/30 rounded-xl opacity-0 group-hover:opacity-100 group-hover:animate-[pulse_2s_ease-in-out_infinite] transition-all duration-300 -z-10"></div>
@@ -74,54 +73,6 @@ const About = () => {
               contributing to open-source projects, or mentoring aspiring developers. 
               I believe in continuous learning and sharing knowledge to help our 
               community grow together.`}
-                </p>
-              </div>
-            </div>
-
-            {/* Personal Values */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
-              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700 hover:border-cyan-400/30 transition-colors">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-cyan-400/10 rounded-lg text-cyan-400">
-                    <FiPenTool className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-white">
-                    Design Minded
-                  </h4>
-                </div>
-                <p className="text-sm text-slate-400">
-                  I craft interfaces that delight users while maintaining clean,
-                  efficient code architecture.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700 hover:border-blue-400/30 transition-colors">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-blue-400/10 rounded-lg text-blue-400">
-                    <FiCpu className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-white">
-                    Technically Versatile
-                  </h4>
-                </div>
-                <p className="text-sm text-slate-400">
-                  From frontend aesthetics to backend logic, I bridge the gap
-                  between design and functionality.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700 hover:border-indigo-400/30 transition-colors">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-indigo-400/10 rounded-lg text-indigo-400">
-                    <FiHeart className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-white">
-                    Community Focused
-                  </h4>
-                </div>
-                <p className="text-sm text-slate-400">
-                  I believe in building technology that serves people and
-                  contributes to collective knowledge.
                 </p>
               </div>
             </div>

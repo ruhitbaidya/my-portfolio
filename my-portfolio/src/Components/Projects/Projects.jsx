@@ -1,7 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
-import { FiGithub, FiExternalLink, FiFilter } from "react-icons/fi";
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiMongodb } from "react-icons/si";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+// import { FaReact, FaNodeJs } from "react-icons/fa";
+// import { SiTypescript, SiTailwindcss, SiMongodb } from "react-icons/si";
 
 const Projects = () => {
   // Sample projects data
@@ -78,22 +78,22 @@ const Projects = () => {
   ];
 
   // Technology icons mapping
-  const techIcons = {
-    React: <FaReact className="text-cyan-400" />,
-    "Node.js": <FaNodeJs className="text-green-500" />,
-    MongoDB: <SiMongodb className="text-green-400" />,
-    TypeScript: <SiTypescript className="text-blue-400" />,
-    Tailwind: <SiTailwindcss className="text-cyan-300" />,
-    Firebase: <div className="text-orange-400">FB</div>,
-    JavaScript: <div className="text-yellow-400">JS</div>,
-    API: <div className="text-purple-400">API</div>,
-    "Next.js": <div className="text-white">NXT</div>,
-    MySQL: <div className="text-blue-300">SQL</div>,
-    "React Native": <FaReact className="text-sky-400" />,
-    Python: <div className="text-blue-500">PY</div>,
-    ML: <div className="text-pink-400">ML</div>,
-    "Chart.js": <div className="text-red-400">CH</div>,
-  };
+  // const techIcons = {
+  //   React: <FaReact className="text-cyan-400" />,
+  //   "Node.js": <FaNodeJs className="text-green-500" />,
+  //   MongoDB: <SiMongodb className="text-green-400" />,
+  //   TypeScript: <SiTypescript className="text-blue-400" />,
+  //   Tailwind: <SiTailwindcss className="text-cyan-300" />,
+  //   Firebase: <div className="text-orange-400">FB</div>,
+  //   JavaScript: <div className="text-yellow-400">JS</div>,
+  //   API: <div className="text-purple-400">API</div>,
+  //   "Next.js": <div className="text-white">NXT</div>,
+  //   MySQL: <div className="text-blue-300">SQL</div>,
+  //   "React Native": <FaReact className="text-sky-400" />,
+  //   Python: <div className="text-blue-500">PY</div>,
+  //   ML: <div className="text-pink-400">ML</div>,
+  //   "Chart.js": <div className="text-red-400">CH</div>,
+  // };
 
   return (
     <div className="bg-slate-900 text-slate-100 min-h-screen">
@@ -138,7 +138,7 @@ const Projects = () => {
       {/* Main Content */}
       <main className="container mx-auto px-6 pb-24">
         {/* Filters */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <FiFilter className="text-cyan-400" />
@@ -179,7 +179,7 @@ const Projects = () => {
               </svg>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Projects Grid */}
         <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -213,7 +213,7 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                {/* <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, index) => (
                     <div
                       key={index}
@@ -223,7 +223,7 @@ const Projects = () => {
                       <span>{tech}</span>
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 <div className="flex justify-between items-center pt-4 border-t border-slate-700">
                   <div className="flex flex-wrap gap-2">
@@ -252,7 +252,7 @@ const Projects = () => {
         </section>
 
         {/* Pagination */}
-        <section className="mt-16 flex justify-center">
+        {/* <section className="mt-16 flex justify-center">
           <div className="flex gap-2">
             <button className="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-700 transition">
               1
@@ -279,7 +279,7 @@ const Projects = () => {
               </svg>
             </button>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Typewriter } from "react-simple-typewriter";
+// import { Typewriter } from "react-simple-typewriter";
 // import { useParams } from "react-router-dom";
 
 const BlogDetails = () => {
@@ -153,7 +153,7 @@ const BlogDetails = () => {
             dangerouslySetInnerHTML={{ __html: blogPost.content }}
           ></article>
 
-          {/* Author Bio */}
+          {/* Author Bio
           <div className="mt-16 pt-8 border-t border-slate-800">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <img
@@ -178,9 +178,9 @@ const BlogDetails = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {/* Related Articles */}
+          {/* Related Articles
           <div className="mt-24">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
@@ -253,7 +253,7 @@ const BlogDetails = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </div>

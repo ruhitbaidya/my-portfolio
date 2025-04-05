@@ -198,11 +198,10 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#38bdf8]/30 transition-all duration-300 hover:opacity-90"
               >
                 {loading ? (
                   <>
