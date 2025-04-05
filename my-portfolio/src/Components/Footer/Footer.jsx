@@ -8,8 +8,34 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const handelSubscribe = async (e) => {
+    e.preventDefault();
+    if (email === "") {
+      toast("Please Select A Valid Email");
+      setEmail("");
+      return;
+    }
+    setLoading(true);
+    fetch(`http://localhost:5000/subscribe`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        setEmail("");
+        toast(data?.message);
+      });
+  };
   return (
     <footer className="relative bg-[#0f172a] pt-20 pb-12 border-t border-[#1e293b] overflow-hidden">
       {/* Decorative gradient background */}
@@ -17,7 +43,6 @@ const Footer = () => {
         <div className="absolute -top-32 -left-32 w-64 h-64 rounded-full bg-gradient-to-r from-[#7dd3fc] to-[#38bdf8] blur-[100px]"></div>
         <div className="absolute -bottom-32 -right-32 w-64 h-64 rounded-full bg-gradient-to-br from-[#7dd3fc] to-[#38bdf8] blur-[100px]"></div>
       </div>
-
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Brand Column */}
@@ -120,9 +145,11 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Subscribe to my newsletter for the latest updates and insights.
             </p>
-            <form className="space-y-4">
+            <form onSubmit={handelSubscribe} className="space-y-4">
               <div>
                 <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   placeholder="Your email address"
                   className="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38bdf8] focus:border-transparent text-white placeholder-gray-500 transition-all"
@@ -133,7 +160,7 @@ const Footer = () => {
                 type="submit"
                 className="w-full px-6 py-3 bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#38bdf8]/30 transition-all duration-300 hover:opacity-90"
               >
-                Subscribe
+                {loading ? "Loading..." : "Subscribe"}
               </button>
             </form>
             <p className="text-gray-500 text-xs mt-3">
@@ -152,6 +179,18 @@ const Footer = () => {
           </p>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </footer>
   );
 };

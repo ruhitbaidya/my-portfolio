@@ -1,66 +1,19 @@
 import { Typewriter } from "react-simple-typewriter";
-// import { FaReact, FaNodeJs } from "react-icons/fa";
-// import { SiTypescript, SiTailwindcss, SiMongodb } from "react-icons/si";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Description } from "../../utils/Descriptions";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { Tooltip } from "react-tooltip";
 const Projects = () => {
+  const [project, setProject] = useState([]);
   // Sample projects data
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "Full-featured online store with admin dashboard and payment processing",
-      category: "Full Stack",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      technologies: ["React", "Node.js", "MongoDB"],
-      tags: ["ecommerce", "dashboard", "payments"],
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "Collaborative task management with real-time updates and team features",
-      category: "Frontend",
-      year: "2023",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      technologies: ["React", "Firebase", "Tailwind"],
-      tags: ["productivity", "collaboration"],
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description:
-        "Real-time weather visualization with historical data and forecasts",
-      category: "Frontend",
-      year: "2022",
-      image:
-        "https://images.unsplash.com/photo-1601134467661-3d775b999c8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      technologies: ["JavaScript", "API", "Chart.js"],
-      tags: ["weather", "data-visualization"],
-    },
-  ];
 
-  // Technology icons mapping
-  // const techIcons = {
-  //   React: <FaReact className="text-cyan-400" />,
-  //   "Node.js": <FaNodeJs className="text-green-500" />,
-  //   MongoDB: <SiMongodb className="text-green-400" />,
-  //   TypeScript: <SiTypescript className="text-blue-400" />,
-  //   Tailwind: <SiTailwindcss className="text-cyan-300" />,
-  //   Firebase: <div className="text-orange-400">FB</div>,
-  //   JavaScript: <div className="text-yellow-400">JS</div>,
-  //   API: <div className="text-purple-400">API</div>,
-  //   "Next.js": <div className="text-white">NXT</div>,
-  //   MySQL: <div className="text-blue-300">SQL</div>,
-  //   "React Native": <FaReact className="text-sky-400" />,
-  //   Python: <div className="text-blue-500">PY</div>,
-  //   ML: <div className="text-pink-400">ML</div>,
-  //   "Chart.js": <div className="text-red-400">CH</div>,
-  // };
-  //
+  useEffect(() => {
+    fetch(`http://localhost:5000/getAllProject`)
+      .then((res) => res.json())
+      .then((data) => setProject(data?.data));
+  }, []);
+
   return (
     <div
       id="projects"
@@ -103,70 +56,89 @@ const Projects = () => {
         </div>
       </section>
 
-      <Link to={`/project/sdfad`}>
-        <main className="container mx-auto px-6">
-          <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-2 group"
-              >
-                <div className="relative overflow-hidden h-48">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                  <div className="absolute top-4 right-4 flex gap-2">
-                    <span className="text-xs px-3 py-1 bg-slate-900/80 rounded-full border border-slate-700 text-cyan-400">
-                      {project.category}
-                    </span>
-                    <span className="text-xs px-3 py-1 bg-slate-900/80 rounded-full border border-slate-700 text-slate-300">
-                      {project.year}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-300 text-sm mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-1.5 text-xs px-3 py-1 bg-slate-700/50 rounded-full border border-slate-600"
-                      >
-                        {techIcons[tech]}
-                        <span>{tech}</span>
-                      </div>
-                    ))}
-                  </div> */}
-
-                  <div className="flex justify-between items-center pt-4 border-t border-slate-700">
-                    {/* <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="text-xs px-2 py-1 bg-slate-900/30 rounded-full text-slate-400"
-                        >
-                          #{tag}
+      <main className="container mx-auto px-6">
+        <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {project &&
+            project.map((project) => (
+              <>
+                <Link key={project._id} to={`/project/${project._id}`}>
+                  <div
+                    key={project.id}
+                    className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-2 group"
+                  >
+                    <div className="relative overflow-hidden h-48">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                      <div className="absolute top-4 right-4 flex gap-2">
+                        <span className="text-xs px-3 py-1 bg-slate-900/80 rounded-full border border-slate-700 text-cyan-400">
+                          {project.category}
                         </span>
-                      ))}
-                    </div> */}
-                    <div></div>
+                        <span className="text-xs px-3 py-1 bg-slate-900/80 rounded-full border border-slate-700 text-slate-300">
+                          {new Date(project?.createdAt).getFullYear()}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-slate-300 text-sm mb-4">
+                        <Description
+                          htmlContent={project.description.slice(0, 120)}
+                        />
+                      </p>
+                      <Tooltip id="my-tooltip" />
+                      <Tooltip id="my-tooltip2" />
+                      <Tooltip id="my-tooltip3" />
+                      <div className="flex justify-end pt-4 border-t border-slate-700">
+                        <div className="flex  gap-[25px]">
+                          <div
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content="Frontend"
+                            data-tooltip-place="top"
+                          >
+                            <Link to={project.url[0]}>
+                              <button className="p-3 bg-slate-700 hover:bg-slate-600 rounded-lg text-slate-300 transition-colors">
+                                <FiGithub size={20} />
+                              </button>
+                            </Link>
+                          </div>
+                          <div
+                            data-tooltip-id="my-tooltip2"
+                            data-tooltip-content="Server"
+                            data-tooltip-place="bottom"
+                          >
+                            <Link to={project.url[1]}>
+                              <button className="p-3 bg-slate-700 hover:bg-slate-600 rounded-lg text-slate-300 transition-colors">
+                                <FiGithub size={20} />
+                              </button>
+                            </Link>
+                          </div>
+                          <div
+                            data-tooltip-id="my-tooltip3"
+                            data-tooltip-content="Live"
+                            data-tooltip-place="right"
+                          >
+                            <Link to={project.url[2]}>
+                              <button className="p-3 bg-cyan-400/10 hover:bg-cyan-400/20 border border-cyan-400/30 rounded-lg text-cyan-400 transition-colors">
+                                <FiExternalLink size={20} />
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </Link>
+              </>
             ))}
-          </section>
-        </main>
-      </Link>
+        </section>
+      </main>
       <div className="mt-[40px] text-center">
         <Link to={`/project`}>
           <button

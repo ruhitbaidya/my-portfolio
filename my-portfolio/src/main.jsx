@@ -12,6 +12,7 @@ import BlogDetails from "./Components/Blog/BlogDetails.jsx";
 import ProjectDetails from "./Components/Projects/ProjectDetails.jsx";
 import Root from "./Components/Root/Root.jsx";
 import Projects from "./Components/Projects/Projects.jsx";
+import "react-tooltip/dist/react-tooltip.css";
 const router = createBrowserRouter([
   {
     path: "/",

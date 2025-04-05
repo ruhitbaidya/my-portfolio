@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { FiCode, FiCpu, FiLayers } from "react-icons/fi";
-import { Icons } from "../../utils/DynamicColor";
+import { Icons } from "../../utils/iconsIn";
 
 const Skill = () => {
   const [skills, setSkills] = useState(null);
@@ -10,7 +10,6 @@ const Skill = () => {
     try {
       const res = await fetch(`http://localhost:5000/get-skills`);
       const result = await res.json();
-      console.log(result);
       setSkills(result.data);
     } catch (error) {
       console.error("Error fetching skills:", error);
@@ -34,7 +33,7 @@ const Skill = () => {
       skills: skills?.filter((skill) => skill.category === "backend") || [],
     },
     {
-      title: "Tools & DevOps",
+      title: "Tools",
       icon: <FiLayers className="text-indigo-400 w-6 h-6" />,
       skills: skills?.filter((skill) => skill.category === "devops") || [],
     },
