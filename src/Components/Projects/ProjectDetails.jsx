@@ -12,7 +12,7 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:5000/get-siangal-project/${id}`)
+      fetch(`https://my-perso-backend.vercel.app/get-siangal-project/${id}`)
         .then((res) => res.json())
         .then((data) => setProject(data?.data));
     }

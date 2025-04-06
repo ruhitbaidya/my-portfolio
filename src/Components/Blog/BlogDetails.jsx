@@ -9,7 +9,7 @@ const BlogDetails = () => {
   // Sample blog post data (in a real app, you'd fetch this based on the ID)
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:5000/get-singal-blog/${id}`)
+      fetch(`https://my-perso-backend.vercel.app/get-singal-blog/${id}`)
         .then((res) => res.json())
         .then((data) => setBlog(data.data));
     }

@@ -22,7 +22,7 @@ const Footer = () => {
       return;
     }
     setLoading(true);
-    fetch(`http://localhost:5000/subscribe`, {
+    fetch(`https://my-perso-backend.vercel.app/subscribe`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

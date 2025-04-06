@@ -8,7 +8,7 @@ const Skill = () => {
 
   const getSkillIcons = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/get-skills`);
+      const res = await fetch(`https://my-perso-backend.vercel.app/get-skills`);
       const result = await res.json();
       setSkills(result.data);
     } catch (error) {

@@ -9,7 +9,7 @@ const Projects = () => {
   // Sample projects data
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getAllProject`)
+    fetch(`https://my-perso-backend.vercel.app/getAllProject`)
       .then((res) => res.json())
       .then((data) => setProject(data?.data));
   }, []);

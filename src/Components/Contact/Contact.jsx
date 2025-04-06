@@ -16,7 +16,7 @@ const Contact = () => {
   const onSubmit = (data) => {
     setLoading(true);
     axios
-      .post("http://localhost:5000/sendMessage", data)
+      .post("https://my-perso-backend.vercel.app/sendMessage", data)
       .then((res) => {
         if (res.data.success) {
           toast.success("Message sent successfully!");

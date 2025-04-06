@@ -6,13 +6,12 @@ import { Description } from "../../utils/Descriptions";
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/get-blog`)
+    fetch(`https://my-perso-backend.vercel.app/get-blog`)
       .then((res) => res.json())
       .then((data) => setBlogs(data.data));
   }, []);
-  console.log(blogs);
   return (
-    <div className="relative bg-slate-900 text-slate-100 min-h-screen py-[150px]">
+    <div className="relative bg-slate-900 text-slate-100 min-h-screen">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full mix-blend-overlay filter blur-3xl"></div>
@@ -39,7 +38,16 @@ const Blogs = () => {
             />
           </div>
         </div>
-
+        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 text-center">
+          Lasest{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7dd3fc] to-[#38bdf8]">
+            Articles
+          </span>
+        </h2>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-[#7dd3fc] to-[#38bdf8] mx-auto rounded-full mb-8"></div>
+        <p className="text-lg text-gray-300 max-w-2xl mx-auto text-center mb-12">
+          Highly skilled in progressive enhancement, design & development
+        </p>
         {/* Blog cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Blog Card 1 */}
@@ -93,6 +101,18 @@ const Blogs = () => {
                 </div>
               </>
             ))}
+        </div>
+
+        {/* View all button */}
+        <div className="text-center mt-16">
+          <Link to="/blog">
+            <button
+              type="submit"
+              className="px-6 py-3 bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#38bdf8]/30 transition-all duration-300 hover:opacity-90"
+            >
+              View All Article
+            </button>
+          </Link>
         </div>
       </div>
     </div>
