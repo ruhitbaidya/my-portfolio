@@ -56,7 +56,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <main className="container mx-auto px-6">
+      <main className="container mx-auto px-6 mt-[20px]">
         <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {project &&
             project.map((project) => (
@@ -96,7 +96,7 @@ const Projects = () => {
                 </Link>
 
                 {/* Action buttons - separated from main link */}
-                <div className="p-6 pt-0">
+                <div className="px-[20px] py-2">
                   <div className="flex justify-end pt-4 border-t border-slate-700">
                     <div className="flex gap-[25px]">
                       <div
