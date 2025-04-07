@@ -11,7 +11,7 @@ const Projects = () => {
   useEffect(() => {
     fetch(`https://my-perso-backend.vercel.app/getAllProject`)
       .then((res) => res.json())
-      .then((data) => setProject(data?.data));
+      .then((data) => setProject(data?.data?.slice(0, 3)));
   }, []);
 
   return (

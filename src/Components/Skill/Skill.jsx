@@ -112,22 +112,20 @@ const Skill = () => {
         {/* Additional Skills Grid - Fallback if no categories */}
         {!skills?.[0]?.category && (
           <div className="mt-12">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-6">
               {skills?.map((item) => (
                 <div
                   key={item._id}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6 text-center transition-all duration-300 hover:border-[#38bdf8] hover:shadow-lg hover:shadow-[#38bdf8]/20 hover:-translate-y-2"
+                  className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4 text-center transition-all duration-300 hover:border-[#38bdf8] hover:shadow-lg hover:shadow-[#38bdf8]/20 hover:-translate-y-2"
                 >
                   <div className="flex justify-center">
                     <Icons
                       iconName={item?.icon}
-                      size={50}
+                      size={40}
                       style={{ color: item?.color }}
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mt-4">
-                    {item.title}
-                  </h3>
+                  <h3 className="font-bold text-white mt-4">{item.title}</h3>
                 </div>
               ))}
             </div>

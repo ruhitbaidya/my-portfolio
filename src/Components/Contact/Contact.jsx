@@ -73,7 +73,7 @@ const Contact = () => {
         {/* Contact Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-2">
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-2 lg:p-8 border border-slate-700 hover:border-cyan-400/30 transition-all duration-300 hover:-translate-y-2">
             <div className="space-y-8">
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
@@ -101,7 +101,7 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                <div className="col-span-2 flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
+                <div className="col-span-1 lg:col-span-2 flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
                   <div className="p-2 bg-blue-400/10 rounded-lg text-blue-400">
                     <MdOutlineMail className="text-2xl" />
                   </div>

@@ -8,7 +8,7 @@ const Blogs = () => {
   useEffect(() => {
     fetch(`https://my-perso-backend.vercel.app/get-blog`)
       .then((res) => res.json())
-      .then((data) => setBlogs(data.data));
+      .then((data) => setBlogs(data.data.slice(0, 3)));
   }, []);
   return (
     <div className="relative bg-slate-900 text-slate-100 min-h-screen">
